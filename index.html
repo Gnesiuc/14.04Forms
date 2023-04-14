@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <title>Create Account</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="account create-account">
+            <form action="#" id="form">
+
+                <h1 class="info-logic">Create account</h1>
+
+                <div class="icon-container">
+                    <a class="icon" href="#"><img src="./img/facebook.png" alt="facebook"></a>
+                    <a class="icon" href="#"><img src="./img/google.png" alt="google"></a>
+                    <a class="icon" href="#"><img src="./img/Instagram01.png" alt="Instagram"></a>
+                </div>
+
+                <p class="text">or use your email for registration</p>
+
+                <label><input class="field create-account-input name-login" placeholder="Name" type="text"></label>
+                <span class="invalide errorName"></span>
+
+                <label><input class="field create-account-input email-login" placeholder="Email" type="email"></label>
+                <span class="invalide errorEmail"></span>
+
+                <label><input class="field create-account-input password-login" placeholder="Password" type="password"></label>
+                <span class="invalide errorPassword"></span>
+
+                <button disabled="disabled" type="submit" class="disabled sing-up">Sing Up</button>
+
+            </form>
+        </div>
+
+        <div class="account sing-in">
+            <form action="#" class="form">
+
+                <h1 class="info-logic">Sing in</h1>
+
+                <div class="icon-container">
+                    <a class="icon" href="#"><img src="./img/facebook.png" alt="facebook"></a>
+                    <a class="icon" href="#"><img src="./img/google.png" alt="google"></a>
+                    <a class="icon" href="#"><img src="./img/Instagram01.png" alt="Instagram"></a>
+                </div>
+
+                <p class="text">or use your account</p>
+
+                <label><input class="field email-connecting singin-input" placeholder="Email" type="email"></label>
+                <span class="invalide error-Email"></span>
+
+                <label><input class="field password-connecting singin-input" placeholder="Password" type="password"></label>
+                <span class="invalide error-Password"></span>
+
+                <a class="forgot-password" href="#">for got your password?</a>
+
+                <button type="submit" disabled class="sing-in disabled">Sign in</button>
+            </form>
+        </div>
+
+        <div class="welcome-info">
+            <div class="info">
+
+                <div class="left welcome-account-info">
+
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login<br> with your personal info</p>
+                    <button class="btn singIn">Sing in</button>
+                </div>
+
+                <div class="right welcome-account-info">
+
+                    <h1>Welcome Friend!</h1>
+                    <p>Enter your personal details and start <br> journey with us</p>
+                    <button class="btn singUp">Sing up</button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+
+
+    <script src="./JS/js.js"></script>
+</body>
+</html>
