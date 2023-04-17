@@ -1,0 +1,224 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container{
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 10px;
+    border: 0.1vh solid gray;
+    box-shadow: 10px 24px 28px 5px gray;
+    width: 880px;
+    height: 480px;
+}
+
+.account{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0,6s ease-in-out;
+}
+
+.create-account{
+    width: 50%;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: white;
+    padding: 0 50px;
+    height: 100%;
+}
+
+.icon-container{
+    margin: 20px;
+}
+
+.icon{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: 1px solid green;
+    margin: 0 5px;
+    height: 50px;
+    width: 50px;
+}
+
+.info-logic{
+    display: flex;
+    text-align: center;
+    font-size: 35px;
+    margin: 0;
+    font-family: "Arial Black", sans-serif;
+}
+
+.info{
+    position: relative;
+    background: #F8522DFF;
+    background: -webkit-linear-gradient(top left, #F8522DFF 10%, #F84B67FF 100%);
+    background: linear-gradient(top left, #F8522DFF 10%, #F84B67FF 100%);
+    color: #FFFFFF;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transition: transform 0.6s ease-in-out;
+}
+
+.welcome-account-info {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    transition: transform 0.8s ease-in-out;
+}
+
+p{
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 1px;
+    margin: 20px 0 30px;
+}
+
+.text{
+    font-size: 19px;
+    margin: 0;
+}
+
+.forgot-password{
+    text-decoration: none;
+    font-size: 20px;
+    margin: 15px;
+    color: rgb(74, 73, 73);
+}
+
+button{
+    display: flex;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 20px;
+    color: white;
+    border: 1px solid red;
+    background-color: red;
+    font-size: 12px;
+    padding: 12px 45px;
+    text-transform: uppercase;
+    transition: 100ms ease;
+}
+
+.btn{
+    background-color: transparent;
+    border-color: white;
+}
+
+button:active{
+    transform: scale(0.95);
+}
+
+input{
+    border: none;
+    background-color: rgb(243, 242, 242);
+    padding: 12px 15px;
+    margin: 8px 0;
+    height: 50px;
+    width: 350px;
+}
+
+.sing-in{
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.singUp{
+    margin-top: 10px;
+}
+
+
+.welcome-info{
+    position: absolute;
+    overflow: hidden;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+}
+
+.container.active .sing-in{
+    margin-top: 500px;
+    transition: all 0.8s ease-in-out;
+}
+
+.container.active .create-account{
+   margin-left: 435px;
+}
+
+.container.active .welcome-info{
+    transform: translateX(-100%);
+}
+
+.container.active .info{
+    transform: translateX(50%);
+}
+
+.container.active .left{
+    transform: translateX(0);
+}
+
+.container.active .right{
+    transform: translateY(100%);
+    transition: all 0.8s ease-in-out;
+}
+
+.right{
+    right: 0;
+    transform: translateX(0);
+}
+
+.left{
+    transform: translateY(-100%);
+    transition: all 0.8s ease-in-out;
+}
+
+/* style input form validation */
+
+.valid{
+    outline: 2px solid green;
+}
+
+.invalid{
+    outline: 2px solid red;
+}
+
+.invalide{
+    color: red;
+    font-size: 13px;
+}
+
+.disabled{
+    background-color: grey;
+    border: none;
+}
