@@ -147,7 +147,7 @@ input{
     width: 350px;
 }
 
-.sing-in{
+.singIn{
     left: 0;
     width: 50%;
     z-index: 2;
@@ -168,7 +168,7 @@ input{
     z-index: 100;
 }
 
-.container.active .sing-in{
+.container.active .singIn{
     margin-top: 500px;
     transition: all 0.8s ease-in-out;
 }

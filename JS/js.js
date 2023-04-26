@@ -1,6 +1,6 @@
 const buttons = document.querySelectorAll(".btn")
-const singIn = document.querySelector(".singIn")
-const singUp = document.querySelector(".singUp")
+const singIn = document.querySelector(".sing-in")
+const singUp = document.querySelector(".sing-up")
 const container = document.querySelector(".container")
 const formCreateAccount = document.querySelector("#form")
 const formSingIn = document.querySelector(".form")
@@ -41,5 +41,75 @@ const showNameError = (nameValue,errorMessage,minLength,maxLength) =>{
 
 }
 nameCreateAccount.addEventListener("input",()=>{
-    showNameError(nameCreateAccount,errorNameCreateAccount,3,9)
+    showNameError(nameCreateAccount,errorNameCreateAccount,3,12)
 })
+
+const showEmailError = (emailValue, errorMessage) => {
+    if(emailValue.value === "") {
+        errorMessage.textContent = "This field should not be empty"
+
+    }else if (!regexEmail.test(emailValue.value)) {
+        errorMessage.textContent = "Please provide a valid email address"
+        emailValue.className = "invalid"
+    } else {
+        emailValue.className = "valid"
+        errorMessage.textContent = ""
+    }
+}
+emailCreateAccount.addEventListener("input", () =>{
+    showEmailError(emailCreateAccount,errorEmailCreateAccount)
+})
+
+emailSingIn.addEventListener("input", () =>{
+    showEmailError(emailSingIn,errorEmailSignIn)
+} )
+
+const showPasswordError = (passwordValue, errorMessage,minLength,maxLength) => {
+    if (passwordValue.value === "") {
+        errorMessage.textContent = "This field should not be empty"
+    } else if (passwordValue.value.length < minLength || passwordValue.value.length > maxLength) {
+        errorMessage.textContent = `Minimum ${minLength} caracters max ${maxLength}`
+        passwordValue.className = "invalid"
+    }else {
+        passwordValue.className = "valid"
+        errorMessage.textContent = ""
+    }
+}
+
+passwordCreateAccount.addEventListener("input", () => {
+    showPasswordError(passwordCreateAccount,errorPasswordCreateAccount,8,20)
+})
+
+passwordSingIn.addEventListener("input", () => {
+    showPasswordError(passwordSingIn,errorPasswordSignIn,8,20)
+})
+
+const btnDisabledSingUp = () =>{
+    formCreateAccount.addEventListener("input", () => {
+     if (nameCreateAccount.className === "valid" && emailCreateAccount.className === "valid" && passwordCreateAccount.className === "valid" ) {
+        singUp.disabled = false
+        singUp.classList.remove("disabled") 
+     } else {
+        singUp.disabled = true
+        singUp.classList.add("disabled") 
+     }
+    })
+
+}
+btnDisabledSingUp()
+
+
+const btnDisabledSingIn = () =>{
+    formSingIn.addEventListener("input", (e) => {
+        if (emailSingIn.className === "valid" && passwordSingIn.className === "valid" ) {
+            singIn.disabled = false
+            singIn.classList.remove("disabled") 
+            console.log(e.target);
+            console.log(singIn);
+         } else {
+            singIn.disabled = true
+            singIn.classList.add("disabled") 
+         }
+    })
+}
+btnDisabledSingIn()
