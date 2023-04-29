@@ -19,7 +19,15 @@ const regexEmail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4}
 //^ вверху это    позволяем использовать алфавит и цифры + к этому обязан поставить
 // собачку
 
-let users =[]
+let users = [
+    {
+       id: 2,
+       name: 'Vase',
+       email: 'vasea@mail.ru',
+       password: '123456789'
+    }
+]
+console.log(users);
 
 buttons.forEach(btn =>{
     btn.addEventListener("click",() =>{
@@ -113,3 +121,51 @@ const btnDisabledSingIn = () =>{
     })
 }
 btnDisabledSingIn()
+
+const clearForm = (form, event_btn, email, password, name = null) => {
+    form.reset()
+    if (name) {
+        name.classList.remove("valid")
+    }
+    
+    email.classList.remove("valid")
+    password.classList.remove("valid")
+
+    event_btn.disabled = true
+    event_btn.classList.add("disabled") 
+}
+
+const createAccount = () => {
+    const noneRepeatEmail = users.findIndex(user_email => user_email.email === emailCreateAccount.value)
+    let newUser = {
+        id: Date.now(),
+        name: nameCreateAccount.value,
+        email: emailCreateAccount.value,
+        password: passwordCreateAccount.value,
+    }
+    if (noneRepeatEmail !== -1) {
+        alert('Email exista')
+    } else {
+        alert('Creat success')
+        users.push(newUser)
+        clearForm(formCreateAccount,singUp,emailCreateAccount,passwordCreateAccount,nameCreateAccount)
+        // console.log(users);
+    }
+}
+formCreateAccount.addEventListener("submit", () => createAccount() )
+// console.log(Date.now());
+
+formSingIn.addEventListener("submit", () => {
+    if ( !users.length) {
+        alert("It's account is not register")
+    } 
+    users.forEach(el => {
+        if(emailSingIn.value.includes(el.email) && passwordSingIn.value.includes(el.password)) {
+            alert(`Numele dumnevoastra ${el.name}`)
+            console.log(el);
+        } else {
+            alert("It's account is not register")
+        }
+    })
+})
+
